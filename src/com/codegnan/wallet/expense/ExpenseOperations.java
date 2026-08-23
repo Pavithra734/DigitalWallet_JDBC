@@ -39,7 +39,7 @@ public class ExpenseOperations {
         System.out.print("Enter Description: ");
         String description = sc.nextLine();
 
-        try {
+        try {  
 
             Connection con = DBConnection.getConnection();
 
