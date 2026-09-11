@@ -150,8 +150,7 @@ public class TransactionOperations {
                         "(sender_id, receiver_id, amount, transaction_type) " +
                         "VALUES (?, ?, ?, ?)";
 
-                PreparedStatement transactionPst =
-                        con.prepareStatement(transactionSql);
+                PreparedStatement transactionPst =con.prepareStatement(transactionSql);
 
                 transactionPst.setInt(1, senderId);
                 transactionPst.setInt(2, receiverId);

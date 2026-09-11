@@ -48,8 +48,7 @@ public class ExpenseOperations {
                     "(user_id, category, amount, expense_date, description) " +
                     "VALUES (?, ?, ?, ?, ?)";
 
-            PreparedStatement pst =
-                    con.prepareStatement(sql);
+            PreparedStatement pst = con.prepareStatement(sql);
 
             pst.setInt(1, userId);
             pst.setString(2, category);
@@ -91,8 +90,7 @@ public class ExpenseOperations {
                     "WHERE user_id = ? " +
                     "ORDER BY expense_date DESC";
 
-            PreparedStatement pst =
-                    con.prepareStatement(sql);
+            PreparedStatement pst =con.prepareStatement(sql);
 
             pst.setInt(1, userId);
 
@@ -104,29 +102,16 @@ public class ExpenseOperations {
 
                 found = true;
 
-                System.out.println(
-                        "------------------------------"
+                System.out.println("------------------------------");
+
+                System.out.println("Expense ID: "+ rs.getInt("expense_id")
                 );
 
-                System.out.println(
-                        "Expense ID: "
-                        + rs.getInt("expense_id")
-                );
+                System.out.println("Category: "+ rs.getString("category"));
 
-                System.out.println(
-                        "Category: "
-                        + rs.getString("category")
-                );
+                System.out.println("Amount: "+ rs.getDouble("amount"));
 
-                System.out.println(
-                        "Amount: "
-                        + rs.getDouble("amount")
-                );
-
-                System.out.println(
-                        "Date: "
-                        + rs.getDate("expense_date")
-                );
+                System.out.println("Date: "+ rs.getDate("expense_date"));
 
                 System.out.println(
                         "Description: "
